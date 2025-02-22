@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+body {
+  font-size: 1.7rem;
+  font-family: "Press Start 2P", serif;
+}
+
+.main-interphase {
+  width: 100%;
+  }
+
+#game-interphase {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(161, 204, 4);
+  min-width: 50vh;
+  min-height: 100vh;
+  position: relative;
+  margin: 0 auto;
+}
+
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.5rem;
+  width: 100%;
+}
+
+a {
+  cursor: pointer;
+}
+
+.play-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.emoji {
+  width: 15rem;
+  height: 15rem;
+  border: dashed black 2px;
+  font-size: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  
+}
+
+.winner-announcement {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  width: 100%;
+  background-color: rgb(238, 180, 3);
+  margin: 1.5rem auto;
+  padding: 2rem 1rem;
+  
+}
+
+.player-choices {
+  align-items: center;
+  justify-content: center;
+}
+
+.choice-button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}

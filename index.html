@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="game-interphase">
+      <div class="main-interphase">
+        <div class="header">
+          <p class="copyright">
+            &copy;2025 designed by
+            <a href="https://www.linkedin.com/in/mosesmbuthia/">mosesmbuthia</a>
+  
+          </p>
+          <p class="score-board">Computer 0 0 Player</p>
+  
+        </div>
+        <div class="play-box" id="computer-container">
+          <p class="play-box-title">Computer</p>
+          <p class="emoji computer-choice">✋</p>
+        </div>
+        <p class="winner-announcement">Currently Draw</p>
+  
+        <div class="play-box" id="player-container">
+          <p class="play-box-title">Player</p>
+          <p class="emoji player-choice">✋</p>
+        </div>
+        <div class="player-choices">
+          <button class="choice-button" id="rock-button" onclick="playGame('Rock')">
+            <p class="button-emoji">✊</p>
+            <p class="button-text">Rock</p>
+          </button>
+  
+          <button class="choice-button" id="paper-button" onclick="playGame('Paper')">
+            <p class="button-emoji">✋</p>
+            <p class="button-text">Paper</p>
+          </button>
+  
+          <button class="choice-button" id="scissors-button" onclick="playGame('Scissors')">
+            <p class="button-emoji">✌️</p>
+            <p class="button-text">Scissors</p>
+          </button>
+  
+        </div>
+  
+      </div>
+    </div>
+
+    <script src="/src/main.js"></script>
+  </body>
+</html>
