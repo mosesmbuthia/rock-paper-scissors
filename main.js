@@ -1,24 +1,88 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+const score = {
+    computerWins: 0, 
+    playerWins: 0, 
+    draw: 0,
+};
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+function pickComputerMove() {
+    const randomNumber = Math.random();
+    let computerMove = "";
 
-setupCounter(document.querySelector('#counter'))
+    if (randomNumber >= 0 && randomNumber < 1/3) {
+        computerMove = "Rock";
+    } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
+        computerMove = "Paper";
+    } else if (randomNumber >= 2/3 && randomNumber < 1) {
+        computerMove = "Scissors";
+    }
+
+    return computerMove;
+}
+
+function playGame(playerMove) {
+    const computerMove = pickComputerMove();
+    let result = "";
+
+    if (playerMove === "Rock") {
+        if (computerMove === "Rock") {
+            result = "Draw"; 
+        } else if (computerMove === "Paper") {
+            result = "Computer Wins";
+        } else if (computerMove === "Scissors") {
+            result = "Player Wins";
+        }
+    } else if (playerMove === "Paper") {
+        if (computerMove === "Rock") {
+            result = "Player Wins";
+        } else if (computerMove === "Paper") {
+            result = "Draw";
+        } else if (computerMove === "Scissors") {
+            result = "Computer Wins";
+        }
+    } else if (playerMove === "Scissors") {
+        if (computerMove === "Rock") {
+            result = "Computer Wins";
+        } else if (computerMove === "Paper") {
+            result = "Player Wins";
+        } else if (computerMove === "Scissors") {
+            result = "Draw";
+        }
+    }
+
+    if (result === "Player Wins") {
+        score.playerWins += 1;
+    } else if (result === "Computer Wins") {
+        score.computerWins += 1;
+    } else if (result === "Draw") {
+        score.draw += 1;
+    }
+
+    updateScoreAnnouncement(result);
+    playerMoveAvatarUpdate(playerMove);
+    computerMoveAvatarUpdate(computerMove);
+}
+
+function updateScoreAnnouncement(result) {
+    document.querySelector(".scores-update").innerHTML = `Computer ${score.computerWins} - ${score.playerWins} Player`;
+    document.querySelector(".winner-announcement-update").innerHTML = result;
+}
+
+function playerMoveAvatarUpdate(playerMove) {
+    if (playerMove === "Rock") {
+        document.querySelector(".player-choice-announcement").innerHTML = "✊";
+    } else if (playerMove === "Paper") {
+        document.querySelector(".player-choice-announcement").innerHTML = "✋";
+    } else if (playerMove === "Scissors") {
+        document.querySelector(".player-choice-announcement").innerHTML = "✌️";
+    }
+}
+
+function computerMoveAvatarUpdate(computerMove) {
+    if (computerMove === "Rock") {
+        document.querySelector(".computer-choice-announcement").innerHTML = "✊";
+    } else if (computerMove === "Paper") {
+        document.querySelector(".computer-choice-announcement").innerHTML = "✋";
+    } else if (computerMove === "Scissors") {
+        document.querySelector(".computer-choice-announcement").innerHTML = "✌️";
+    }
+}
