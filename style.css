@@ -87,8 +87,14 @@ a {
 }
 
 .player-choices {
+  display: flex;
+  flex-direction:row ;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  gap: 2rem;
+
 }
 
 .choice-button {
@@ -97,4 +103,14 @@ a {
   outline: none;
   padding: 1rem 2rem;
   border-radius: 10px;
+  
 }
+
+.button-emoji {
+  font-size: 5rem;
+}
+
+.button-text {
+  font-family: "Press Start 2P", serif;
+}
+
