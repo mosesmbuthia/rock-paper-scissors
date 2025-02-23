@@ -17,6 +17,9 @@ html {
 body {
   font-size: 1.7rem;
   font-family: "Press Start 2P", serif;
+  height: 100vh;
+  width: 60%;
+  margin: auto;
 }
 
 .main-interphase {
