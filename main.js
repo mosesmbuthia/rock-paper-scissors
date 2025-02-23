@@ -57,15 +57,13 @@ function playGame(playerMove) {
         score.draw += 1;
     }
 
-    updateScoreAnnouncement(result);
-    playerMoveAvatarUpdate(playerMove);
-    computerMoveAvatarUpdate(computerMove);
-}
+  
 
 function updateScoreAnnouncement(result) {
-    document.querySelector(".scores-update").innerHTML = `Computer ${score.computerWins} - ${score.playerWins} Player`;
+    document.querySelector(".scores-update").innerHTML = `Computer ${score.computerWins}  ${score.playerWins} Player`;
     document.querySelector(".winner-announcement-update").innerHTML = result;
 }
+updateScoreAnnouncement(result);
 
 function playerMoveAvatarUpdate(playerMove) {
     if (playerMove === "Rock") {
@@ -76,6 +74,8 @@ function playerMoveAvatarUpdate(playerMove) {
         document.querySelector(".player-choice-announcement").innerHTML = "✌️";
     }
 }
+playerMoveAvatarUpdate(playerMove);
+
 
 function computerMoveAvatarUpdate(computerMove) {
     if (computerMove === "Rock") {
@@ -85,4 +85,8 @@ function computerMoveAvatarUpdate(computerMove) {
     } else if (computerMove === "Scissors") {
         document.querySelector(".computer-choice-announcement").innerHTML = "✌️";
     }
+   
+    
+    computerMoveAvatarUpdate(computerMove);
+}
 }
