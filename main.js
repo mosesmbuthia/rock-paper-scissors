@@ -25,7 +25,7 @@ function playGame(playerMove) {
 
     if (playerMove === "Rock") {
         if (computerMove === "Rock") {
-            result = "Draw"; 
+            result = "Draw" 
         } else if (computerMove === "Paper") {
             result = "Computer Wins";
         } else if (computerMove === "Scissors") {
@@ -50,7 +50,7 @@ function playGame(playerMove) {
     }
 
     if (result === "Player Wins") {
-        score.playerWins += 1;
+        score.playerWins += 1
     } else if (result === "Computer Wins") {
         score.computerWins += 1;
     } else if (result === "Draw") {
@@ -67,11 +67,11 @@ updateScoreAnnouncement(result);
 
 function playerMoveAvatarUpdate(playerMove) {
     if (playerMove === "Rock") {
-        document.querySelector(".player-choice-announcement").innerHTML = "✊";
+        document.querySelector(".player-choice-announcement").innerHTML = "✊"
     } else if (playerMove === "Paper") {
-        document.querySelector(".player-choice-announcement").innerHTML = "✋";
+        document.querySelector(".player-choice-announcement").innerHTML = "✋"
     } else if (playerMove === "Scissors") {
-        document.querySelector(".player-choice-announcement").innerHTML = "✌️";
+        document.querySelector(".player-choice-announcement").innerHTML = "✌️"
     }
 }
 playerMoveAvatarUpdate(playerMove);
@@ -79,11 +79,11 @@ playerMoveAvatarUpdate(playerMove);
 
 function computerMoveAvatarUpdate(computerMove) {
     if (computerMove === "Rock") {
-        document.querySelector(".computer-choice-announcement").innerHTML = "✊";
+        document.querySelector(".computer-choice-announcement").innerHTML = "✊"
     } else if (computerMove === "Paper") {
-        document.querySelector(".computer-choice-announcement").innerHTML = "✋";
+        document.querySelector(".computer-choice-announcement").innerHTML = "✋"
     } else if (computerMove === "Scissors") {
-        document.querySelector(".computer-choice-announcement").innerHTML = "✌️";
+        document.querySelector(".computer-choice-announcement").innerHTML = "✌️"
     }
    
     
