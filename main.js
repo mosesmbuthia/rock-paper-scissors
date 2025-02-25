@@ -3,12 +3,12 @@ const score = {
     playerWins: 0,
     draw: 0,
 };
-
+ //rounding down the random number generated
 function pickComputerMove() {
     const randomNumber = Math.random();
+   
     const roundedDown = Math.floor(randomNumber);
     let computerMove = "";
-
     if (randomNumber >= 0 && randomNumber < 1/3) {
         computerMove = "Rock";
     } else if (randomNumber >= 1/3 && randomNumber < 2/3) {
@@ -19,11 +19,12 @@ function pickComputerMove() {
 
     return computerMove;
 }
+//used the logical operators AND and OR instead of nested if
 
 function determineWinner(playerMove, computerMove) {
     if (playerMove === computerMove) {
         return "Draw";
-        /*used the logical operators AND and OR instead of nested if*/
+        
     } else if (
         (playerMove === "Rock" && computerMove === "Scissors") ||
         (playerMove === "Paper" && computerMove === "Rock") ||
@@ -59,11 +60,11 @@ function playGame(playerMove) {
 
     function playerMoveAvatarUpdate(playerMove) {
         if (playerMove === "Rock") {
-            document.querySelector(".player-choice-announcement").innerHTML = "✊"
+            document.querySelector(".player-choice-announcement").innerHTML = "✊";
         } else if (playerMove === "Paper") {
-            document.querySelector(".player-choice-announcement").innerHTML = "✋"
+            document.querySelector(".player-choice-announcement").innerHTML = "✋";
         } else if (playerMove === "Scissors") {
-            document.querySelector(".player-choice-announcement").innerHTML = "✌️"
+            document.querySelector(".player-choice-announcement").innerHTML = "✌️";
         }
     }
     playerMoveAvatarUpdate(playerMove);
@@ -71,11 +72,11 @@ function playGame(playerMove) {
 
     function computerMoveAvatarUpdate(computerMove) {
         if (computerMove === "Rock") {
-            document.querySelector(".computer-choice-announcement").innerHTML = "✊"
+            document.querySelector(".computer-choice-announcement").innerHTML = "✊";
         } else if (computerMove === "Paper") {
-            document.querySelector(".computer-choice-announcement").innerHTML = "✋"
+            document.querySelector(".computer-choice-announcement").innerHTML = "✋";
         } else if (computerMove === "Scissors") {
-            document.querySelector(".computer-choice-announcement").innerHTML = "✌️"
+            document.querySelector(".computer-choice-announcement").innerHTML = "✌️";
         }
     }
     computerMoveAvatarUpdate(computerMove);
